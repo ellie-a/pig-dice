@@ -10,21 +10,27 @@ this.gameScore= 0;
 
 
 Player1.prototype.rollDice = function() {
+
   var roll = Math.floor((Math.random()*6)+1);
   this.currentRoll = roll
   if (roll > 1) {
     this.turn += roll;
   } else if (roll === 1) {
     this.turn = 0;
-    $(".playerOne").hide();
-    $(".playerTwo").show();
   }
 }
 
 Player1.prototype.totalScore = function() {
     this.gameScore = this.gameScore + this.turn;
+    if (this.gameScore >= 100){
+      alert("Player 1 wins!");
+      this.gameScore = 0;
+    }
 }
 
+// function resetFields() {
+//
+// }
 
 // player 2 business logic
 
@@ -43,13 +49,15 @@ Player2.prototype.rollDice = function() {
     this.turn += roll;
   } else if (roll === 1) {
     this.turn = 0;
-    $(".playerTwo").hide();
-    $(".playerOne").show();
   }
 }
 
 Player2.prototype.totalScore = function() {
     this.gameScore = this.gameScore + this.turn;
+    if (this.gameScore >= 100){
+      alert("Player 2 wins!");
+      this.gameScore = 0;
+    }
 }
 
 
@@ -72,6 +80,7 @@ $(document).ready(function() {
   });
 
   $("button#playerHold").click(function() {
+
 
     newRoll.totalScore();
 
