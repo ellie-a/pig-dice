@@ -4,7 +4,10 @@
 function Player () {
 this.currentRoll = 0;
 this.turn= 0;
+this.gameScore= 0;
 }
+
+
 
 Player.prototype.rollDice = function() {
 
@@ -17,16 +20,9 @@ Player.prototype.rollDice = function() {
   }
 }
 
-// Dice.prototype.turnScore = function(diceRoll) {
-//   // console.log(this.roll);
-//   if (this.roll === 1) {
-//     return this.turn = 0;
-//   } else if (this.roll !== 1) {
-//     return this.turn += this.roll;
-//   } else if (this.turn >= 100) {
-//     alert("game over");
-//   }
-// }
+Player.prototype.totalScore = function() {
+    this.gameScore = this.turn; //needs to add new turn to overall gameScore
+}
 
 
 // user logic
@@ -34,6 +30,7 @@ Player.prototype.rollDice = function() {
 $(document).ready(function() {
 
   var newRoll = new Player();
+
   $("button#playerRoll").click(function() {
 
     newRoll.rollDice();
@@ -42,6 +39,16 @@ $(document).ready(function() {
     $("#turnTotal").text(newRoll.turn);
 
   });
+  
+  $("button#playerHold").click(function() {
+
+    newRoll.totalScore();
+
+    $("#playerScore").text(newRoll.gameScore);
+
+
+  });
+
   //callback for holding
 
 });
