@@ -25,20 +25,31 @@
             <p>&nbsp;<span id="turnTotal"></span></p>
           </div>
         </div>
-        <div class="col-md-6" id="playerTwo">
-          <p>
-            player two here
-          </p>
+
+<!-- player 2 column -->
+        <div class="col-md-6 well playerTwo">
+          <h3>Player Two</h3>
+          <button id="playerRoll1" type="button" class="btn btn-primary">Roll Dice</button>&nbsp;&nbsp;
+          <button id="playerHold1" type="button" class="btn btn-danger">Hold</button>
+          <div class="displayRoll1">
+            <h6>Roll Return</h6>
+            <p>&nbsp;<span id="rollOne1"></span></p>
+            <h6>Turn Total</h6>
+            <p>&nbsp;<span id="turnTotal1"></span></p>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-md-6 well playerOneScore">
-            <h6>Player One Overall Score</h6>
-            <p>&nbsp;<span id="playerScore"></span></p>
-          </div>
-          <div class="col-md-6 well playerTwoScore">
-            <h6>Player Two Overall Score</h6>
-            <p>&nbsp;<span id="playerTwoScore"></span></p>
-          </div>
+      </div>
+
+<!-- game totals for each player -->
+
+      <div class="row">
+        <div class="col-md-6 well playerOneScore">
+          <h6>Player One Overall Score</h6>
+          <p>&nbsp;<span id="playerScore"></span></p>
+        </div>
+        <div class="col-md-6 well playerTwoScore">
+          <h6>Player Two Overall Score</h6>
+          <p>&nbsp;<span id="playerTwoScore"></span></p>
         </div>
       </div>
     </div>
